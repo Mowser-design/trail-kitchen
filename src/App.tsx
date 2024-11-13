@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { LayoutGrid, BarChart3, Database, Mountain, Home, LogIn, LogOut, UserPlus, User, Menu, X } from 'lucide-react';
 import { TripDashboard } from './components/TripDashboard';
 import { TripView } from './components/TripView';
@@ -113,12 +113,12 @@ export function App() {
         <EmailVerificationBanner />
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
+            <Link to="/" onClick={() => handleNavigate('home')} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <span className="text-emerald-600">
                 <Mountain className="w-8 h-8 stroke-[1.5]" />
               </span>
               <h1 className="text-xl font-bold text-gray-900">Trail Kitchen</h1>
-            </div>
+            </Link>
 
             {/* Mobile menu button */}
             <button
